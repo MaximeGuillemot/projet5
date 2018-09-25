@@ -3,6 +3,15 @@ var Table =
     init: function(table)
     {
         this.table = table;
+        var columns = document.getElementsByTagName("TH");
+
+        var j = 0;
+
+        for (i = 0; i < columns.length; i++) 
+        {
+            columns[i].addEventListener("mouseup", this.sortTable.bind(this, j));
+            j++;
+        }
     },
 
     sortTable: function(column)
