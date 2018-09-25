@@ -1,0 +1,68 @@
+/*----------------------
+    General properties.
+----------------------*/
+
+    body
+    {    
+        width: 100vw;
+        max-height: 100vh;
+
+        margin: 0;
+       
+        font-size: 14px;
+        font-family: "Calibri";
+
+        background-color: #EEE;
+    }
+
+    @font-face 
+    { 
+        font-family: 'T4CBeaulieux';
+        src: url('../fonts/t4cbeaulieux.ttf');
+    }
+
+    a
+    {
+        text-decoration: none;
+    }
+
+    .flex
+    {
+        display: flex;
+    }
+
+/*----------------------
+    Header properties.
+----------------------*/
+
+    header
+    {
+        width: 100%;
+        height: 80px;
+
+        position: fixed;
+        top: 0;
+        
+        margin: 0;
+        
+        background: linear-gradient(135deg, rgba(6,53,85,1) 0%,rgba(20,72,127,1) 49%,rgba(6,53,85,1) 100%);
+        border-bottom: 2px solid #FFF;
+        box-shadow: 0 5px 5px #333;
+    }
+
+    h1
+    {
+        margin: 0;
+        padding-top: 10px;
+
+        color: #FFF;
+        font-size: 3rem;
+        font-family: 'T4CBeaulieux';
+        text-align: center;
+    }
+
+    h1 a:visited
+    {
+        color: #FFF;
+    }
+
