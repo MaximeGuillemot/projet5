@@ -16,7 +16,6 @@ var Table =
 
     sortTable: function(column)
     {
-        
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = this.table;
         switching = true;

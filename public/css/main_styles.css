@@ -38,7 +38,7 @@
 
     h2
     {
-        width: 100%;
+        width: calc(100vw - 120px);
         height: 40px;
 
         position: fixed;
