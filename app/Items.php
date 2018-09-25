@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Item
+class Items
 {
     private $itemStructure,
             $name,
@@ -74,19 +74,31 @@ class Item
         }
     }
 
+    public function getArrayInfo()
+    {
+        $item_array = array();
+
+        foreach($this as $key => $value)
+        {
+            $item_array[$key] = $value;
+        }
+        
+        return $item_array;
+    }
+
     private function setIdItem($idItem)
     {
         if(empty($idItem))
         {
-            $this->errors[] = IDITEM_NOT_VALID;
+            $this->errors[] = self::IDITEM_NOT_VALID;
             return;
         }
 
         $idItem = (string) $idItem;
 
-        if(strlen($name) > 20)
+        if(strlen($idItem) > 20)
         {
-            $this->errors[] = IDITEM_NOT_VALID;
+            $this->errors[] = self::IDITEM_NOT_VALID;
             return;
         }
 
@@ -97,7 +109,7 @@ class Item
     {
         if(empty($name))
         {
-            $this->errors[] = NAME_NOT_VALID;
+            $this->errors[] = self::NAME_NOT_VALID;
             return;
         }
 
@@ -105,7 +117,7 @@ class Item
 
         if(strlen($name) > 45)
         {
-            $this->errors[] = NAME_NOT_VALID;
+            $this->errors[] = self::NAME_NOT_VALID;
             return;
         }
 
@@ -116,7 +128,7 @@ class Item
     {
         if(empty($idAppearance))
         {
-            $this->errors[] = IDAPPEARANCE_NOT_VALID;
+            $this->errors[] = self::IDAPPEARANCE_NOT_VALID;
             return;
         }
 
@@ -124,7 +136,7 @@ class Item
 
         if($idAppearance < 0 || $idAppearance > 2147483647)
         {
-            $this->errors[] = IDAPPEARANCE_NOT_VALID;
+            $this->errors[] = self::IDAPPEARANCE_NOT_VALID;
             return;
         }
 
@@ -135,7 +147,7 @@ class Item
     {
         if(empty($itemStructure))
         {
-            $this->errors[] = ITEMSTRUCTURE_NOT_VALID;
+            $this->errors[] = self::ITEMSTRUCTURE_NOT_VALID;
             return;
         }
 
@@ -143,7 +155,7 @@ class Item
 
         if($itemStructure < 0 || $itemStructure > 2147483647)
         {
-            $this->errors[] = ITEMSTRUCTURE_NOT_VALID;
+            $this->errors[] = self::ITEMSTRUCTURE_NOT_VALID;
             return;
         }
 
@@ -162,7 +174,7 @@ class Item
 
         if($weight < 0 || $weight > 2147483647)
         {
-            $this->errors[] = WEIGHT_NOT_VALID;
+            $this->errors[] = self::WEIGHT_NOT_VALID;
             return;
         }
 
@@ -181,7 +193,7 @@ class Item
 
         if(strlen($sellPriceFormula) > 500)
         {
-            $this->errors[] = SELLPRICEFORMULA_NOT_VALID;
+            $this->errors[] = self::SELLPRICEFORMULA_NOT_VALID;
             return;
         }
 
@@ -200,7 +212,7 @@ class Item
 
         if($weaponType < 0 || $weaponType > 2147483647) // Max number to be replaced dynamically with ListWeaponType table
         {
-            $this->errors[] = WEAPONTYPE_NOT_VALID;
+            $this->errors[] = self::WEAPONTYPE_NOT_VALID;
             return;
         }
 
@@ -219,7 +231,7 @@ class Item
 
         if($equipPosition < 0 || $equipPosition > 2147483647) // Max number to be replaced dynamically with ListEquipPosition table
         {
-            $this->errors[] = EQUIPPOSITION_NOT_VALID;
+            $this->errors[] = self::EQUIPPOSITION_NOT_VALID;
             return;
         }
 
@@ -322,7 +334,7 @@ class Item
 
         if(strlen($damageRoll) > 500)
         {
-            $this->errors[] = DAMAGEROLL_NOT_VALID;
+            $this->errors[] = self::DAMAGEROLL_NOT_VALID;
             return;
         }
 
@@ -341,7 +353,7 @@ class Item
 
         if(strlen($dealtExhaust) > 500)
         {
-            $this->errors[] = DEALEXHAUST_NOT_VALID;
+            $this->errors[] = self::DEALEXHAUST_NOT_VALID;
             return;
         }
 
@@ -372,7 +384,7 @@ class Item
 
         if(strlen($idItemKey) > 20)
         {
-            $this->errors[] = IDITEMKEY_NOT_VALID;
+            $this->errors[] = self::IDITEMKEY_NOT_VALID;
             return;
         }
 
@@ -391,7 +403,7 @@ class Item
 
         if($difficulty < 0 || $difficulty > 2147483647)
         {
-            $this->errors[] = DIFFICULTY_NOT_VALID;
+            $this->errors[] = self::DIFFICULTY_NOT_VALID;
             return;
         }
 
@@ -410,7 +422,7 @@ class Item
 
         if($slotH < 1 || $slotH > 2147483647)
         {
-            $this->errors[] = SLOTH_NOT_VALID;
+            $this->errors[] = self::SLOTH_NOT_VALID;
             return;
         }
 
@@ -429,7 +441,7 @@ class Item
 
         if($slotW < 1 || $slotW > 2147483647)
         {
-            $this->errors[] = SLOTW_NOT_VALID;
+            $this->errors[] = self::SLOTW_NOT_VALID;
             return;
         }
         
@@ -448,7 +460,7 @@ class Item
 
         if($containerGold < 0 || $containerGold > 2147483647)
         {
-            $this->errors[] = CONTAINERGOLD_NOT_VALID;
+            $this->errors[] = self::CONTAINERGOLD_NOT_VALID;
             return;
         }
 
@@ -467,7 +479,7 @@ class Item
 
         if($containerUserRespawn < 0 || $containerUserRespawn > 2147483647)
         {
-            $this->errors[] = CONTAINERURESPAWN_NOT_VALID;
+            $this->errors[] = self::CONTAINERURESPAWN_NOT_VALID;
             return;
         }
          
@@ -486,7 +498,7 @@ class Item
 
         if($containerGlobalRespawn < 0 || $containerGlobalRespawn > 2147483647)
         {
-            $this->errors[] = CONTAINERGRESPAWN_NOT_VALID;
+            $this->errors[] = self::CONTAINERGRESPAWN_NOT_VALID;
             return;
         }
 
@@ -505,7 +517,7 @@ class Item
 
         if(strlen($signMessage) > 4294967296)
         {
-            $this->errors[] = SIGNMESSAGE_NOT_VALID;
+            $this->errors[] = self::SIGNMESSAGE_NOT_VALID;
             return;
         }
         
