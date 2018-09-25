@@ -1,5 +1,18 @@
 <?php
 
+use App\Config;
+use App\DB\DBConnect;
+
+require '../app/Autoloader.php';
+App\Autoloader::initiateAutoloader();
+
+$config = Config::getInstance();
+$db = new DBConnect(
+	$config->getSetting('db_name'), 
+	$config->getSetting('db_user'), 
+	$config->getSetting('db_pass'), 
+	$config->getSetting('db_host'));
+
 $page = (!empty($_GET['p'])) ? $_GET['p'] : 'home';
 
 ob_start();
