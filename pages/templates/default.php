@@ -57,5 +57,9 @@
 		<footer>
 
 		</footer>
+
+		<script src="../public/js/ajax.js"></script>
+		<script src="../public/js/Item.js"></script>
+		<script src="../public/js/API.js"></script>
 	</body>
 </html>
