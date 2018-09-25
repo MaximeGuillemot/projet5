@@ -31,6 +31,11 @@
         display: flex;
     }
 
+    #wrapper
+    {
+        margin-top: 82px;
+    }
+
 /*----------------------
     Header properties.
 ----------------------*/
@@ -66,3 +71,167 @@
         color: #FFF;
     }
 
+/*---------------------------
+    Navigation properties.
+---------------------------*/
+
+    nav
+    {
+        width: 120px;
+        height: calc(100vh - 82px);
+
+        position: fixed;
+
+        padding-top: 10px;
+
+        background-color: #071622;
+    }
+
+    nav ul
+    {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li
+    {
+        width: 100px;
+        height: 110px;
+
+        position: relative;
+
+        margin: auto;
+        margin-bottom: 15px;
+        margin-top: 5px;
+        padding: 0;
+
+        list-style: none;
+    }
+
+    nav a
+    {
+        display: inline-block;
+
+        width: 100px;
+        height: 30px;
+
+        position: absolute;
+
+        margin: 0;
+        margin-left: -32px;
+        padding-top: 90px;
+
+        color: #FFF;
+        font-size: 1.5rem;
+        text-align: center;
+
+        opacity: 0;
+        transition: opacity .2s ease-in-out, margin .2s ease-in-out;
+    }
+
+    nav:hover a
+    {
+        margin-left: 0;
+        opacity: 1;
+    }
+
+    #nav_items a:hover 
+    {
+        color: #01a714;
+    }
+
+    #nav_creatures a:hover 
+    {
+        color: #a70101;
+    }
+
+    #nav_npcs a:hover 
+    {
+        color: #01a0a6;
+    }
+
+    #nav_clans a:hover 
+    {
+        color: #a001a6;
+    }
+
+    #nav_spells a:hover 
+    {
+        color: #d68800;
+    }
+
+    #nav_flags a:hover 
+    {
+        color: #016aa7;
+    }
+    
+    #nav_items
+    {
+        background: url('../images/nav/items_blank.png') no-repeat center;
+        background-size:  50px 60px;
+    }
+
+    #nav_items:hover
+    {
+        background: url('../images/nav/items_colored.png') no-repeat center;
+        background-size:  50px 60px;
+    }
+
+    #nav_creatures
+    {
+        background: url('../images/nav/creatures_blank.png') no-repeat center;
+        background-size:  60px 60px;
+    }
+
+    #nav_creatures:hover
+    {
+        background: url('../images/nav/creatures_colored.png') no-repeat center;
+        background-size:  60px 60px;
+    }
+
+    #nav_npcs
+    {
+        background: url('../images/nav/npcs_blank.png') no-repeat center;
+        background-size:  60px 60px;
+    }
+
+    #nav_npcs:hover
+    {
+        background: url('../images/nav/npcs_colored.png') no-repeat center;
+        background-size:  60px 60px;
+    }
+
+    #nav_clans
+    {
+        background: url('../images/nav/clans_blank.png') no-repeat center;
+        background-size: 65px 45px;
+    }
+
+    #nav_clans:hover
+    {
+        background: url('../images/nav/clans_colored.png') no-repeat center;
+        background-size:  65px 45px;
+    }
+
+    #nav_spells
+    {
+        background: url('../images/nav/spells_blank.png') no-repeat center;
+        background-size:  60px 55px;
+    }
+
+    #nav_spells:hover
+    {
+        background: url('../images/nav/spells_colored.png') no-repeat center;
+        background-size:  60px 55px;
+    }
+
+    #nav_flags
+    {
+        background: url('../images/nav/flags_blank.png') no-repeat center;
+        background-size:  50px 65px;
+    }
+
+    #nav_flags:hover
+    {
+        background: url('../images/nav/flags_colored.png') no-repeat center;
+        background-size:  50px 65px;

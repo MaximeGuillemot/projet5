@@ -16,30 +16,26 @@
 
 		<div id="wrapper" class="flex">
 			<nav>
-				<a href="index.php?p=items">
-					<div id="nav_items"></div>
-					<p id="items_desc">Items</p>
-				</a>
-				<a href="index.php?p=creatures">
-					<div id="nav_creatures"></div>
-					<p id="creatures_desc">Creatures</p>
-				</a>
-				<a href="index.php?p=npcs">
-					<div id="nav_npcs"></div>
-					<p id="npcs_desc">NPCs</p>
-				</a>
-				<a href="index.php?p=clans">
-					<div id="nav_clans"></div>
-					<p id="clans_desc">Clans</p>
-				</a>
-				<a href="index.php?p=spells">
-					<div id="nav_spells"></div>
-					<p id="spells_desc">Spells</p>
-				</a>
-				<a href="index.php?p=flags">
-					<div id="nav_flags"></div>
-					<p id="flags_desc">Flags</p>
-				</a>
+                <ul>
+                    <li id="nav_items">
+                        <a href="index.php?p=items">Items</a>
+                    </li>
+                    <li id="nav_creatures">
+                        <a href="index.php?p=creatures">Creatures</a>
+                    </li>
+                    <li id="nav_npcs">
+                        <a href="index.php?p=npcs">NPCs</a>
+                    </li>
+                    <li id="nav_clans">
+                        <a href="index.php?p=clans">Clans</a>
+                    </li>
+                    <li id="nav_spells">
+                        <a href="index.php?p=spells">Spells</a>
+                    </li>
+                    <li id="nav_flags">
+                        <a href="index.php?p=flags">Flags</a>
+                    </li>
+                </ul>
 			</nav>
 
 			<main>
