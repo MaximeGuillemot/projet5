@@ -8,7 +8,7 @@ var Item =
         }
     },
 
-    addItemToTable: function(table, bgColor)
+    addItemToTable: function(table)
     {
         var itemLineElt = document.createElement("tr");
         var itemImageElt = document.createElement("img");
@@ -64,8 +64,6 @@ var Item =
 
             itemLineElt.appendChild(itemCellElt);
         }
-
-        itemLineElt.style.backgroundColor = bgColor;
 
         table.appendChild(itemLineElt);
     }

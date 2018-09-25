@@ -34,10 +34,44 @@ td
     border: 1px solid #071622;
 }
 
+tr:hover
+{
+    cursor: pointer;
+}
+
 tr:hover td
 {
     color: #FFF;
-    
+
     background-color: #071e36;
+}
+
+#add_item_btn
+{
+    display: block;
+
+    width: 100px;
+    height: 42px;
+
+    margin: auto;
+    margin-bottom: 25px;
+    padding: 5px;
+
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+
+    background-color: #071622;
+    border: 2px solid #071622;
+}
+
+
+#add_item_btn:hover
+{
+    color: #071622;
+
+    border: 2px solid #071622;
+    background-color: #FFF;
     cursor: pointer;
 }
