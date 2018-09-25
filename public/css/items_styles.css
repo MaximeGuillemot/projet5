@@ -1,0 +1,43 @@
+/*---------------------------
+    Items page properties.
+---------------------------*/
+
+
+table
+{
+    width: 95%;
+
+    margin: auto;
+    margin-bottom: 20px;
+    
+    border: 2px solid #071622;
+    border-collapse: collapse;
+}
+
+th
+{
+    color: #FFF;
+
+    background-color: #071622;
+    border: 1px solid #778fa7;
+}
+
+td
+{
+    height: 40px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    text-align: center;
+
+    border: 1px solid #071622;
+}
+
+tr:hover td
+{
+    color: #FFF;
+    
+    background-color: #071e36;
+    cursor: pointer;
+}
