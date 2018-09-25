@@ -6,7 +6,8 @@
 		<title>T5C Editor</title>
 
 		<link rel="icon" sizes="16x16" href="images/favicon.ico" />
-		<link href="css/main_styles.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="css/main_styles.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="css/items_styles.css" type="text/css" rel="stylesheet" media="all" />
 	</head>
 
 	<body>

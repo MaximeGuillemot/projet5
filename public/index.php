@@ -7,6 +7,9 @@ switch ($page)
 {
 	case 'home':
 		require '../pages/home.php';
+        break;
+    case 'items':
+		require '../pages/items.php';
 		break;
 	default:
 		require '../pages/error.php';
