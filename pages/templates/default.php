@@ -39,7 +39,7 @@
                 </ul>
 			</nav>
 
-			<main>
+			<main class="flex">
 				<?php 
 					if(!empty($content))
 					{

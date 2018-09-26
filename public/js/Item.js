@@ -25,28 +25,28 @@ var Item =
             {
                 switch(properties[property][1])
                 {
-                    case "0":
+                    case 0:
                         itemImage = '../public/images/structures/weapon.png';
                         break;
-                    case "1":
+                    case 1:
                         itemImage = '../public/images/structures/armor.png';
                         break;
-                    case "2":
+                    case 2:
                         itemImage = '../public/images/structures/object.png';
                         break;
-                    case "3":
+                    case 3:
                         itemImage = '../public/images/structures/consumable.png';
                         break;
-                    case "4":
+                    case 4:
                         itemImage = '../public/images/structures/chest.png';
                         break;
-                    case "5":
+                    case 5:
                         itemImage = '../public/images/structures/guildchest.png';
                         break;
-                    case "6":
+                    case 6:
                         itemImage = '../public/images/structures/container.png';
                         break;
-                    case "7":
+                    case 7:
                         itemImage = '../public/images/structures/sign.png';
                         break;
                     default:
