@@ -79,10 +79,138 @@ var Table =
         var swapColor = true;
         var rows = this.table.rows;
 
-        for(var i=0; i < rows.length; i++)
+        for(var i = 0; i < rows.length; i++)
         {
             rows[i].style.backgroundColor = swapColor ? "#b7cce4" : "#FFF";
             swapColor = !swapColor;
+        }
+    },
+
+    showDesc: function(boost, item)
+    {
+        var cells = this.table.getElementsByTagName("TD");
+        var itemDescElt = document.getElementById("item_desc");
+        var itemNameElt = document.getElementById("item_name");
+        var itemDetailsElt = document.getElementById("item_details");
+
+        for(var i = 0; i < cells.length; i++)
+        {
+            if(cells[i].textContent === boost.idItem)
+            {
+                cells[i].parentNode.addEventListener("mouseover", function(e)
+                {
+                    var left  = (e.clientX + 30)  + "px";
+                    var top  = (e.clientY - 100) + "px";
+
+                    itemDescElt.style.left = left;
+                    itemDescElt.style.top = top;
+                    itemDescElt.style.display = "block";
+                    itemNameElt.textContent = item.name;
+                    
+                        itemDetailsElt.setAttribute("name", boost.idItem);
+                        var boon = "";
+
+                        switch(boost.element)
+                        {
+                            case "0":
+                                boon = "str";
+                                break;
+                            case "1":
+                                boon = "agi";
+                                break;
+                            case "2":
+                                boon = "int";
+                                break;
+                            case "3":
+                                boon = "wis";
+                                break;
+                            case "4":
+                                boon = "end";
+                                break;
+                            case "5":
+                                boon = "fire";
+                                break;
+                            case "6":
+                                boon = "earth";
+                                break;
+                            case "7":
+                                boon = "water";
+                                break;
+                            case "8":
+                                boon = "air";
+                                break;
+                            case "9":
+                                boon = "dark";
+                                break;
+                            case "10":
+                                boon = "light";
+                                break;
+                            case "11":
+                                boon = "dmg";
+                                break;
+                            case "12":
+                                boon = "luck";
+                                break;
+                            case "13":
+                                boon = "ca";
+                                break;
+                            case "14":
+                                boon = "fire_resist";
+                                break;
+                            case "15":
+                                boon = "earth_resist";
+                                break;
+                            case "16":
+                                boon = "water_resist";
+                                break;
+                            case "17":
+                                boon = "air_resist";
+                                break;
+                            case "18":
+                                boon = "dark_resist";
+                                break;
+                            case "19":
+                                boon = "light_resist";
+                                break;
+                        }
+                        var boonElt = document.getElementById(boon);
+                        boonElt.textContent = boost.valueFormula;
+                        boonElt.style.fontWeight = "bold";
+
+                        if(boost.valueFormula > 0)
+                        {
+                            boonElt.style.color = "#038b19";
+                        }
+                        else
+                        {
+                            boonElt.style.color = "#de0101";
+                        }
+                    
+                });
+
+                cells[i].parentNode.addEventListener("mousemove", function(e)
+                {
+                    var left  = (e.clientX + 30)  + "px";
+                    var top  = (e.clientY - 100) + "px";
+
+                    itemDescElt.style.left = left;
+                    itemDescElt.style.top = top;
+                });
+
+                cells[i].parentNode.addEventListener("mouseout", function()
+                {
+                    itemDescElt.style.display = "none";
+
+                    var boons = document.getElementsByClassName("stat_value");
+
+                    for(var i = 0; i < boons.length; i++)
+                    {
+                        boons[i].textContent = "0";
+                        boons[i].style.color = "#000";
+                        boons[i].style.fontWeight = "normal";
+                    }
+                });
+            }
         }
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\DB;
 
-use App\Item;
 use \PDO;
 
 class ItemsDB
@@ -36,5 +35,20 @@ class ItemsDB
         }
 
         return $items;
+    }
+
+    public function getItemsBoosts()
+    {
+        $q = $this->pdo->prepare('SELECT * FROM ItemBoost');
+        $q->execute();
+        $data = $q->fetchAll(PDO::FETCH_ASSOC);
+        $boosts = [];
+
+        foreach($data as $boost)
+        {
+            $boosts[] = $boost;
+        }
+
+        return $boosts;
     }
 }

@@ -80,7 +80,10 @@ class Items
 
         foreach($this as $key => $value)
         {
-            $item_array[$key] = $value;
+            if($key != 'errors')
+            {
+                $item_array[$key] = $value;
+            }
         }
         
         return $item_array;
@@ -147,7 +150,7 @@ class Items
     {
         if(empty($itemStructure))
         {
-            $this->errors[] = self::ITEMSTRUCTURE_NOT_VALID;
+            $this->itemStructure = 0;
             return;
         }
 

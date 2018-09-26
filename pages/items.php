@@ -34,3 +34,57 @@
         </tr>
     </table>
 </div>
+
+<div id="item_desc">
+    <h3 id="item_name"></h3>
+
+    <p id="item_details" name="">
+        <div id="item_wrapper" class="flex">
+            <div class="stats_wrapper" id="item_stats">
+                <h4>Caracteristics</h4>
+                <ul>
+                    <li>Stength: <span id="str" class="stat_value">0</span></li>
+                    <li>Agility: <span id="agi" class="stat_value">0</span></li>
+                    <li>Intelligence: <span id="int" class="stat_value">0</span></li>
+                    <li>Wisdom: <span id="wis" class="stat_value">0</span></li>
+                    <li>Endurence: <span id="end" class="stat_value">0</span></li>
+                </ul>
+            </div>
+
+            <div class="stats_wrapper" id="item_caracs">
+                <h4>Combat</h4>
+                <ul>
+                    <li>Damage: <span id="dmg" class="stat_value">0</span></li>
+                    <li>Armor: <span id="ca" class="stat_value">0</span></li>
+                    <li>Luck: <span id="luck" class="stat_value">0</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="item_wrapper" class="flex">
+            <div class="stats_wrapper" id="item_powers">
+                <h4>Powers</h4>
+                <ul>
+                    <li>Fire: <span id="fire" class="stat_value">0</span></li>
+                    <li>Earth: <span id="earth" class="stat_value">0</span></li>
+                    <li>Water: <span id="water" class="stat_value">0</span></li>
+                    <li>Air: <span id="air" class="stat_value">0</span></li>
+                    <li>Dark: <span id="dark" class="stat_value">0</span></li>
+                    <li>Light: <span id="light" class="stat_value">0</span></li>
+                </ul>
+            </div>
+
+            <div class="stats_wrapper" id="item_resists">
+                <h4>Resistances</h4>
+                <ul>
+                    <li>Fire Resist: <span id="fire_resist" class="stat_value">0</span></li>
+                    <li>Earth Resist: <span id="earth_resist" class="stat_value">0</span></li>
+                    <li>Water Resist: <span id="water_resist" class="stat_value">0</span></li>
+                    <li>Air Resist: <span id="air_resist" class="stat_value">0</span></li>
+                    <li>Dark Resist: <span id="dark_resist" class="stat_value">0</span></li>
+                    <li>Light Resist: <span id="light_resist" class="stat_value">0</span></li>
+                </ul>
+            </div>
+        </div>
+    </p>
+</div>
