@@ -54,8 +54,8 @@
             <div class="stats_wrapper" id="item_caracs">
                 <h4>Combat</h4>
                 <ul>
-                    <li>Damage: <span id="dmg" class="stat_value">---</span></li>
-                    <li>Armor: <span id="ca" class="stat_value">---</span></li>
+                    <li>Damage: <span id="damage" class="stat_value">---</span></li>
+                    <li>Armor: <span id="armor_class" class="stat_value">---</span></li>
                     <li>Luck: <span id="luck" class="stat_value">---</span></li>
                 </ul>
             </div>

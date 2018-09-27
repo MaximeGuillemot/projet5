@@ -51,4 +51,19 @@ class ItemsDB
 
         return $boosts;
     }
+
+    public function getItemsStats()
+    {
+        $q = $this->pdo->prepare('SELECT * FROM ListStat');
+        $q->execute();
+        $data = $q->fetchAll(PDO::FETCH_ASSOC);
+        $stats = [];
+
+        foreach($data as $stat)
+        {
+            $stats[] = $stat;
+        }
+
+        return $stats;
+    }
 }

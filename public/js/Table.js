@@ -86,7 +86,7 @@ var Table =
         }
     },
 
-    showDesc: function(boost, item)
+    showDesc: function(boost, item, stats)
     {
         var cells = this.table.getElementsByTagName("TD");
         var itemDescElt = document.getElementById("item_desc");
@@ -110,69 +110,15 @@ var Table =
                         itemDetailsElt.setAttribute("name", boost.idItem);
                         var boon = "";
 
-                        switch(boost.element)
+                        for(var i = 0; i < stats.length; i++)
                         {
-                            case "0":
-                                boon = "str";
-                                break;
-                            case "1":
-                                boon = "agi";
-                                break;
-                            case "2":
-                                boon = "int";
-                                break;
-                            case "3":
-                                boon = "wis";
-                                break;
-                            case "4":
-                                boon = "end";
-                                break;
-                            case "5":
-                                boon = "fire";
-                                break;
-                            case "6":
-                                boon = "earth";
-                                break;
-                            case "7":
-                                boon = "water";
-                                break;
-                            case "8":
-                                boon = "air";
-                                break;
-                            case "9":
-                                boon = "dark";
-                                break;
-                            case "10":
-                                boon = "light";
-                                break;
-                            case "11":
-                                boon = "dmg";
-                                break;
-                            case "12":
-                                boon = "luck";
-                                break;
-                            case "13":
-                                boon = "ca";
-                                break;
-                            case "14":
-                                boon = "fire_resist";
-                                break;
-                            case "15":
-                                boon = "earth_resist";
-                                break;
-                            case "16":
-                                boon = "water_resist";
-                                break;
-                            case "17":
-                                boon = "air_resist";
-                                break;
-                            case "18":
-                                boon = "dark_resist";
-                                break;
-                            case "19":
-                                boon = "light_resist";
-                                break;
+                            if(stats[i].idListStat === boost.element)
+                            {
+                                boon = stats[i].value;
+                                boon = boon.replace(" ", "_");
+                            }
                         }
+
                         var boonElt = document.getElementById(boon);
                         boonElt.textContent = boost.valueFormula;
                         boonElt.style.fontWeight = "bold";
