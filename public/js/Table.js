@@ -86,18 +86,21 @@ var Table =
         }
     },
 
-    showDesc: function(boost, item, stats)
+    showDesc: function(elt, item, stats, type)
     {
         var cells = this.table.getElementsByTagName("TD");
         var itemDescElt = document.getElementById("item_desc");
         var itemNameElt = document.getElementById("item_name");
         var itemDetailsElt = document.getElementById("item_details");
+        var itemReqsElt = document.getElementById("item_reqs");
 
         for(var i = 0; i < cells.length; i++)
         {
-            if(cells[i].textContent === boost.idItem)
+            if(cells[i].textContent === elt.idItem)
             {
-                cells[i].parentNode.addEventListener("mouseover", function(e)
+                var cell = cells[i];
+
+                cell.parentNode.addEventListener("mouseover", function(e)
                 {
                     var left  = (e.clientX + 30)  + "px";
                     var top  = (e.clientY - 100) + "px";
@@ -106,13 +109,48 @@ var Table =
                     itemDescElt.style.top = top;
                     itemDescElt.style.display = "block";
                     itemNameElt.textContent = item.name;
+
                     
-                        itemDetailsElt.setAttribute("name", boost.idItem);
+                //console.log(item);
+
+                    if(cell.textContent === elt.idItem && type === "req")
+                    {
+                        itemReqsElt.setAttribute("name", elt.idItem);
+                        var req = "";
+
+                        for(var i = 0; i < stats.length; i++)
+                        {
+                            if(stats[i].idListStat === elt.element)
+                            {
+                                req = stats[i].value;
+                                req = req.replace(" ", "_");
+                                req = req.replace(req, "req_" + req);
+                            }
+                        }
+
+                        var reqElt = document.getElementById(req);
+
+                        reqElt.textContent = elt.valueFormula;
+                        reqElt.style.fontWeight = "bold";
+
+                        if(elt.valueFormula > 0)
+                        {
+                            reqElt.style.color = "#038b19";
+                        }
+                        else
+                        {
+                            reqElt.style.color = "#de0101";
+                        }
+                    }   
+
+                    if(cell.textContent === elt.idItem && type === "boost")
+                    {
+                        itemDetailsElt.setAttribute("name", elt.idItem);
                         var boon = "";
 
                         for(var i = 0; i < stats.length; i++)
                         {
-                            if(stats[i].idListStat === boost.element)
+                            if(stats[i].idListStat === elt.element)
                             {
                                 boon = stats[i].value;
                                 boon = boon.replace(" ", "_");
@@ -120,10 +158,10 @@ var Table =
                         }
 
                         var boonElt = document.getElementById(boon);
-                        boonElt.textContent = boost.valueFormula;
+                        boonElt.textContent = elt.valueFormula;
                         boonElt.style.fontWeight = "bold";
 
-                        if(boost.valueFormula > 0)
+                        if(elt.valueFormula > 0)
                         {
                             boonElt.style.color = "#038b19";
                         }
@@ -131,7 +169,8 @@ var Table =
                         {
                             boonElt.style.color = "#de0101";
                         }
-                    
+                    }
+                 
                 });
 
                 cells[i].parentNode.addEventListener("mousemove", function(e)
@@ -147,13 +186,13 @@ var Table =
                 {
                     itemDescElt.style.display = "none";
 
-                    var boons = document.getElementsByClassName("stat_value");
+                    var characs = document.getElementsByClassName("stat_value");
 
-                    for(var i = 0; i < boons.length; i++)
+                    for(var i = 0; i < characs.length; i++)
                     {
-                        boons[i].textContent = "---";
-                        boons[i].style.color = "#000";
-                        boons[i].style.fontWeight = "normal";
+                        characs[i].textContent = "---";
+                        characs[i].style.color = "#000";
+                        characs[i].style.fontWeight = "normal";
                     }
                 });
             }

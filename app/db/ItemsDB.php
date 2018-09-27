@@ -66,4 +66,19 @@ class ItemsDB
 
         return $stats;
     }
+
+    public function getItemsReqs()
+    {
+        $q = $this->pdo->prepare('SELECT * FROM ItemReqs');
+        $q->execute();
+        $data = $q->fetchAll(PDO::FETCH_ASSOC);
+        $reqs = [];
+
+        foreach($data as $req)
+        {
+            $reqs[] = $req;
+        }
+
+        return $reqs;
+    }
 }
