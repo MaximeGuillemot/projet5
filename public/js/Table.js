@@ -205,7 +205,7 @@ var Table =
 
                     for(var i = 0; i < boons.length; i++)
                     {
-                        boons[i].textContent = "0";
+                        boons[i].textContent = "---";
                         boons[i].style.color = "#000";
                         boons[i].style.fontWeight = "normal";
                     }
