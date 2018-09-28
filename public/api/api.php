@@ -23,6 +23,7 @@ $itemsCount = $itemsDB->countItems();
 $itemReqs = $itemsDB->getItemsReqs();
 $itemBoosts = $itemsDB->getItemsBoosts();
 $itemStats = $itemsDB->getItemsStats();
+$itemEquiPos = $itemsDB->getItemsEquipPos();
 $item_data['data'] = array();
 
 if($itemsCount > 0)
@@ -32,7 +33,12 @@ if($itemsCount > 0)
         array_push($item_data['data'], $item->getArrayInfo());    
     }
 
-    echo json_encode(array('items' => $item_data['data'], 'reqs' => $itemReqs, 'boosts' => $itemBoosts, 'stats' => $itemStats));
+    echo json_encode(array(
+        'items' => $item_data['data'], 
+        'reqs' => $itemReqs, 
+        'boosts' => $itemBoosts, 
+        'stats' => $itemStats, 
+        'equippos' => $itemEquiPos));
 }
 else
 {

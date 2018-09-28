@@ -86,13 +86,14 @@ var Table =
         }
     },
 
-    showDesc: function(elt, item, stats, type)
+    showDesc: function(elt, item, stats, type, equipPos)
     {
         var cells = this.table.getElementsByTagName("TD");
         var itemDescElt = document.getElementById("item_desc");
         var itemNameElt = document.getElementById("item_name");
         var itemDetailsElt = document.getElementById("item_details");
         var itemReqsElt = document.getElementById("item_reqs");
+        var itemPosElt = document.getElementById("item_pos"); 
 
         for(var i = 0; i < cells.length; i++)
         {
@@ -108,10 +109,7 @@ var Table =
                     itemDescElt.style.left = left;
                     itemDescElt.style.top = top;
                     itemDescElt.style.display = "block";
-                    itemNameElt.textContent = item.name;
-
-                    
-                //console.log(item);
+                    itemNameElt.textContent = item.name + " - " + item.idItem;
 
                     if(cell.textContent === elt.idItem && type === "req")
                     {
@@ -131,16 +129,6 @@ var Table =
                         var reqElt = document.getElementById(req);
 
                         reqElt.textContent = elt.valueFormula;
-                        reqElt.style.fontWeight = "bold";
-
-                        if(elt.valueFormula > 0)
-                        {
-                            reqElt.style.color = "#038b19";
-                        }
-                        else
-                        {
-                            reqElt.style.color = "#de0101";
-                        }
                     }   
 
                     if(cell.textContent === elt.idItem && type === "boost")
@@ -163,11 +151,27 @@ var Table =
 
                         if(elt.valueFormula > 0)
                         {
-                            boonElt.style.color = "#038b19";
+                            boonElt.style.color = "#006810";
                         }
                         else
                         {
                             boonElt.style.color = "#de0101";
+                        }
+                    }
+
+                    for(var i = 0; i < equipPos.length; i++)
+                    {
+                        var equip = "";
+
+                        
+                        if(equipPos[i].idListEquipPosition == item.equipPosition)
+                        {
+                            console.log(equipPos[i].idListEquipPosition + " - " + item.equipPosition);
+                            equip = equipPos[i].value;
+                            equip = equip.toLowerCase();
+                            equip = equip.replace(" ", "_");
+                            itemPosElt.src = "../public/images/equipment/" + equip + ".png";
+                            
                         }
                     }
                  

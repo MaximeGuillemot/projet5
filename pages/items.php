@@ -37,6 +37,11 @@
 
 <div id="item_desc">
     <h3 id="item_name"></h3>
+    <div class="flex">
+        <div class="item_img"><img id="item_pos" src="../public/images/equipment/equipment_armor.png" alt="Item icon"></div>
+        <div class="item_img"><img src="../public/images/item_appearances/generic_armor.png" alt="Item icon"></div>
+        <div class="item_img"><img id="item_grid" src="../public/images/equipment_grid/grid3x3.png" alt="Item icon"></div>
+    </div>
 
     <div id="item_desc_wrapper" class="flex">
         <div id="item_reqs" class="flex" name="">

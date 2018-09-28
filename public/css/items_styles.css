@@ -76,30 +76,6 @@ tr:hover td
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #item_name
 {
     color: #FFF;
@@ -122,7 +98,7 @@ tr:hover td
     display: none;
 
     width: 625px;
-    height: 400px;
+    height: 550px;
 
     position: fixed;
 
@@ -196,4 +172,14 @@ tr:hover td
 #item_desc_wrapper
 {
     justify-content: space-around;
+}
+
+.item_img
+{
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #071622;
+    padding: 0;
 }

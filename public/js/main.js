@@ -12,6 +12,7 @@ ajaxGet("http://localhost/projet5/public/api/api.php", function (data)
     var boosts = data.boosts;
     var stats = data.stats;
     var reqs = data.reqs;
+    var equipPos = data.equippos;
 
     boosts.forEach(function (boostedItem)
     {
@@ -33,7 +34,7 @@ ajaxGet("http://localhost/projet5/public/api/api.php", function (data)
         {
             if(elt.idItem === listedItem.idItem)
             {
-                itemTable.showDesc(elt, listedItem, stats, "boost");
+                itemTable.showDesc(elt, listedItem, stats, "boost", equipPos);
             }
         });
 
@@ -41,7 +42,7 @@ ajaxGet("http://localhost/projet5/public/api/api.php", function (data)
         {
             if(elt.idItem === listedItem.idItem)
             {
-                itemTable.showDesc(elt, listedItem, stats, "req");
+                itemTable.showDesc(elt, listedItem, stats, "req", equipPos);
             }
         });
     });

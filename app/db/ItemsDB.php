@@ -81,4 +81,19 @@ class ItemsDB
 
         return $reqs;
     }
+
+    public function getItemsEquipPos()
+    {
+        $q = $this->pdo->prepare('SELECT * FROM ListEquipPosition');
+        $q->execute();
+        $data = $q->fetchAll(PDO::FETCH_ASSOC);
+        $equiPos = [];
+
+        foreach($data as $pos)
+        {
+            $equiPos[] = $pos;
+        }
+
+        return $equiPos;
+    }
 }
