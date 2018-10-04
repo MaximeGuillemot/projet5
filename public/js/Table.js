@@ -141,6 +141,10 @@ var Table =
         var reqElt = document.getElementById(req);
 
         reqElt.textContent = elt.valueFormula;
+
+        reqElt.style.fontWeight = "bold";
+
+        reqElt.style.color = "#de0101";
     },
 
     fillBoons: function(elt, stats)
@@ -196,7 +200,7 @@ var Table =
     placeDescOnCursor: function(e)
     {
         var left  = (e.clientX + 30)  + "px";
-        var top  = (e.clientY - 100) + "px";
+        var top  = (e.clientY - 250) + "px";
 
         this.itemDescElt.style.left = left;
         this.itemDescElt.style.top = top;
