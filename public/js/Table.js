@@ -1,5 +1,7 @@
 var Table =
 {
+    itemDescElt: document.getElementById("item_desc"),
+
     init: function(table)
     {
         this.table = table;
@@ -38,7 +40,6 @@ var Table =
                 {
                     if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) 
                     {
-
                         shouldSwitch = true;
                         break;
                     }
@@ -47,7 +48,6 @@ var Table =
                 {
                     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) 
                     {
-
                         shouldSwitch = true;
                         break;
                     }
@@ -89,11 +89,8 @@ var Table =
     showDesc: function(elt, item, stats, type, equipPos)
     {
         var cells = this.table.getElementsByTagName("TD");
-        var itemDescElt = document.getElementById("item_desc");
         var itemNameElt = document.getElementById("item_name");
-        var itemDetailsElt = document.getElementById("item_details");
-        var itemReqsElt = document.getElementById("item_reqs");
-        var itemPosElt = document.getElementById("item_pos"); 
+        var itemGridElt = document.getElementById("item_grid");
 
         for(var i = 0; i < cells.length; i++)
         {
@@ -101,105 +98,122 @@ var Table =
             {
                 var cell = cells[i];
 
-                cell.parentNode.addEventListener("mouseover", function(e)
-                {
-                    var left  = (e.clientX + 30)  + "px";
-                    var top  = (e.clientY - 100) + "px";
+                cell.parentNode.addEventListener("mouseover", function(e) { return this.placeDescOnCursor(e); }.bind(this));
+                cell.parentNode.addEventListener("mouseover", function() { return this.pickEquipImg(equipPos, item); }.bind(this));
+                cell.parentNode.addEventListener("mousemove", function(e) { return this.placeDescOnCursor(e); }.bind(this));
+                cell.parentNode.addEventListener("mouseout", function() { return this.hideDesc(); }.bind(this));
 
-                    itemDescElt.style.left = left;
-                    itemDescElt.style.top = top;
-                    itemDescElt.style.display = "block";
+                cell.parentNode.addEventListener("mouseover", function()
+                {
                     itemNameElt.textContent = item.name + " - " + item.idItem;
-
-                    if(cell.textContent === elt.idItem && type === "req")
-                    {
-                        itemReqsElt.setAttribute("name", elt.idItem);
-                        var req = "";
-
-                        for(var i = 0; i < stats.length; i++)
-                        {
-                            if(stats[i].idListStat === elt.element)
-                            {
-                                req = stats[i].value;
-                                req = req.replace(" ", "_");
-                                req = req.replace(req, "req_" + req);
-                            }
-                        }
-
-                        var reqElt = document.getElementById(req);
-
-                        reqElt.textContent = elt.valueFormula;
-                    }   
-
-                    if(cell.textContent === elt.idItem && type === "boost")
-                    {
-                        itemDetailsElt.setAttribute("name", elt.idItem);
-                        var boon = "";
-
-                        for(var i = 0; i < stats.length; i++)
-                        {
-                            if(stats[i].idListStat === elt.element)
-                            {
-                                boon = stats[i].value;
-                                boon = boon.replace(" ", "_");
-                            }
-                        }
-
-                        var boonElt = document.getElementById(boon);
-                        boonElt.textContent = elt.valueFormula;
-                        boonElt.style.fontWeight = "bold";
-
-                        if(elt.valueFormula > 0)
-                        {
-                            boonElt.style.color = "#006810";
-                        }
-                        else
-                        {
-                            boonElt.style.color = "#de0101";
-                        }
-                    }
-
-                    for(var i = 0; i < equipPos.length; i++)
-                    {
-                        var equip = "";
-
-                        
-                        if(equipPos[i].idListEquipPosition == item.equipPosition)
-                        {
-                            console.log(equipPos[i].idListEquipPosition + " - " + item.equipPosition);
-                            equip = equipPos[i].value;
-                            equip = equip.toLowerCase();
-                            equip = equip.replace(" ", "_");
-                            itemPosElt.src = "../public/images/equipment/" + equip + ".png";
-                            
-                        }
-                    }
-                 
+                    itemGridElt.src = "../public/images/equipment_grid/grid" + item.slotH + "x" + item.slotW + ".png";
                 });
 
-                cells[i].parentNode.addEventListener("mousemove", function(e)
+                if(type === "req")
                 {
-                    var left  = (e.clientX + 30)  + "px";
-                    var top  = (e.clientY - 100) + "px";
-
-                    itemDescElt.style.left = left;
-                    itemDescElt.style.top = top;
-                });
-
-                cells[i].parentNode.addEventListener("mouseout", function()
+                    cell.parentNode.addEventListener("mouseover", function() { return this.fillReq(elt, stats); }.bind(this));
+                }
+                else if(type === "boost")
                 {
-                    itemDescElt.style.display = "none";
-
-                    var characs = document.getElementsByClassName("stat_value");
-
-                    for(var i = 0; i < characs.length; i++)
-                    {
-                        characs[i].textContent = "---";
-                        characs[i].style.color = "#000";
-                        characs[i].style.fontWeight = "normal";
-                    }
-                });
+                    cell.parentNode.addEventListener("mouseover", function() { return this.fillBoons(elt, stats); }.bind(this));
+                }
             }
         }
+    },
+
+    fillReq: function(elt, stats)
+    {
+        var itemReqsElt = document.getElementById("item_reqs");
+        var req = "";
+
+        itemReqsElt.setAttribute("name", elt.idItem);
+
+        for(var i = 0; i < stats.length; i++)
+        {
+            if(stats[i].idListStat === elt.element)
+            {
+                req = stats[i].value;
+                req = req.replace(" ", "_");
+                req = req.replace(req, "req_" + req);
+            }
+        }
+
+        var reqElt = document.getElementById(req);
+
+        reqElt.textContent = elt.valueFormula;
+    },
+
+    fillBoons: function(elt, stats)
+    {
+        var itemDetailsElt = document.getElementById("item_details");
+        var boon = "";
+
+        itemDetailsElt.setAttribute("name", elt.idItem);
+
+        for(var i = 0; i < stats.length; i++)
+        {
+            if(stats[i].idListStat === elt.element)
+            {
+                boon = stats[i].value;
+                boon = boon.replace(" ", "_");
+            }
+        }
+
+        var boonElt = document.getElementById(boon);
+
+        boonElt.textContent = elt.valueFormula;
+        boonElt.style.fontWeight = "bold";
+
+        if(elt.valueFormula > 0)
+        {
+            boonElt.style.color = "#006810";
+        }
+        else
+        {
+            boonElt.style.color = "#de0101";
+        }
+    },
+
+    pickEquipImg: function(equipPos, item)
+    {
+        var itemPosElt = document.getElementById("item_pos");
+
+        for(var i = 0; i < equipPos.length; i++)
+        {
+            var equip = "";
+
+            if(equipPos[i].idListEquipPosition == item.equipPosition)
+            {
+                equip = equipPos[i].value;
+                equip = equip.toLowerCase();
+                equip = equip.replace(" ", "_");
+                itemPosElt.src = "../public/images/equipment/" + equip + ".png";
+                
+            }
+        }
+    },
+
+    placeDescOnCursor: function(e)
+    {
+        var left  = (e.clientX + 30)  + "px";
+        var top  = (e.clientY - 100) + "px";
+
+        this.itemDescElt.style.left = left;
+        this.itemDescElt.style.top = top;
+        this.itemDescElt.style.display = "block";
+    },
+
+    hideDesc: function()
+    {
+        var characs = document.getElementsByClassName("stat_value");
+        
+        for(var i = 0; i < characs.length; i++)
+        {
+            characs[i].textContent = "---";
+            characs[i].style.color = "#000";
+            characs[i].style.fontWeight = "normal";
+        }
+
+        this.itemDescElt.style.display = "none";
     }
 }

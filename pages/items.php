@@ -38,9 +38,19 @@
 <div id="item_desc">
     <h3 id="item_name"></h3>
     <div class="flex">
-        <div class="item_img"><img id="item_pos" src="../public/images/equipment/equipment_armor.png" alt="Item icon"></div>
+        <div class="item_img"><img id="item_pos" src="" alt="Item icon"></div>
         <div class="item_img"><img src="../public/images/item_appearances/generic_armor.png" alt="Item icon"></div>
-        <div class="item_img"><img id="item_grid" src="../public/images/equipment_grid/grid3x3.png" alt="Item icon"></div>
+        <div class="item_img"><img id="item_grid" src="" alt="Item grid"></div>
+        <div class="stats_wrapper" style="margin-right: 30px; margin-top: 20px; height: 120px;">
+            <h4>General</h4>
+            <ul>
+                <li>Weight: <span id="" class="stat_value">---</span></li>
+                <li>Sell Price: <span id="" class="stat_value">---</span></li>
+                <li>Cannot Junk: <span id="" class="stat_value">---</span></li>
+                <li>Cannot Drop: <span id="" class="stat_value">---</span></li>
+                <li>Cannot Rob: <span id="" class="stat_value">---</span></li>
+            </ul>
+        </div>
     </div>
 
     <div id="item_desc_wrapper" class="flex">

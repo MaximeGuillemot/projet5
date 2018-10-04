@@ -5,7 +5,7 @@ var idItems = [];
 var boostedItems = [];
 var reqItems = [];
 
-ajaxGet("http://localhost/projet5/public/api/api.php", function (data) 
+ajaxGet("http://localhost/projet5/pages/api/api.php", function (data) 
 {
     var data = JSON.parse(data);
     var items = data.items;
