@@ -38,7 +38,7 @@
 
     h2
     {
-        width: calc(100vw - 120px);
+        width: 100%;
         height: 40px;
 
         position: fixed;
@@ -123,11 +123,12 @@
         padding: 0;
 
         list-style: none;
+        cursor: pointer;
     }
 
-    nav a
+    nav span
     {
-        display: inline-block;
+        display: block;
 
         width: 100px;
         height: 30px;
@@ -146,109 +147,110 @@
         transition: opacity .2s ease-in-out, margin .2s ease-in-out;
     }
 
-    nav:hover a
+    nav:hover span
     {
         margin-left: 0;
         opacity: 1;
     }
 
-    #nav_items a:hover 
+    #nav_items span:hover 
     {
         color: #01a714;
     }
 
-    #nav_creatures a:hover 
+    #nav_creatures span:hover 
     {
         color: #a70101;
     }
 
-    #nav_npcs a:hover 
+    #nav_npcs span:hover 
     {
         color: #01a0a6;
     }
 
-    #nav_clans a:hover 
+    #nav_clans span:hover 
     {
         color: #a001a6;
     }
 
-    #nav_spells a:hover 
+    #nav_spells span:hover 
     {
         color: #d68800;
     }
 
-    #nav_flags a:hover 
+    #nav_flags span:hover 
     {
         color: #016aa7;
     }
     
-    #nav_items
+    .nav_items_blank
     {
         background: url('../images/nav/items_blank.png') no-repeat center;
         background-size:  50px 60px;
     }
 
-    #nav_items:hover
+    .nav_items_blank:hover, .nav_items_colored
     {
         background: url('../images/nav/items_colored.png') no-repeat center;
         background-size:  50px 60px;
     }
 
-    #nav_creatures
+
+    .nav_creatures_blank
     {
         background: url('../images/nav/creatures_blank.png') no-repeat center;
         background-size:  60px 60px;
     }
 
-    #nav_creatures:hover
+    .nav_creatures_blank:hover, .nav_creatures_colored
     {
         background: url('../images/nav/creatures_colored.png') no-repeat center;
         background-size:  60px 60px;
     }
 
-    #nav_npcs
+    .nav_npcs_blank
     {
         background: url('../images/nav/npcs_blank.png') no-repeat center;
         background-size:  60px 60px;
     }
 
-    #nav_npcs:hover
+    .nav_npcs_blank:hover, .nav_npcs_colored
     {
         background: url('../images/nav/npcs_colored.png') no-repeat center;
         background-size:  60px 60px;
     }
 
-    #nav_clans
+    .nav_clans_blank
     {
         background: url('../images/nav/clans_blank.png') no-repeat center;
         background-size: 65px 45px;
     }
 
-    #nav_clans:hover
+    .nav_clans_blank:hover, .nav_clans_colored
     {
         background: url('../images/nav/clans_colored.png') no-repeat center;
         background-size:  65px 45px;
     }
 
-    #nav_spells
+    .nav_spells_blank
     {
         background: url('../images/nav/spells_blank.png') no-repeat center;
         background-size:  60px 55px;
     }
 
-    #nav_spells:hover
+    .nav_spells_blank:hover, .nav_spells_colored
     {
         background: url('../images/nav/spells_colored.png') no-repeat center;
         background-size:  60px 55px;
     }
 
-    #nav_flags
+    .nav_flags_blank
     {
         background: url('../images/nav/flags_blank.png') no-repeat center;
         background-size:  50px 65px;
     }
 
-    #nav_flags:hover
+    .nav_flags_blank:hover, .nav_flags_colored
     {
         background: url('../images/nav/flags_colored.png') no-repeat center;
         background-size:  50px 65px;
@@ -270,4 +272,16 @@
     {
         padding: 40px;
         padding-top: 80px;
+    }
+
+
+
+
+
+
+
+
+    #items_page
+    {
+        display: none;
     }

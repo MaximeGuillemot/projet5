@@ -9,6 +9,7 @@ class Items
             $idItem,
             $idAppearance,
             $weight,
+            $idSellType,
             $sellPriceFormula,
             $weaponType,
             $equipPosition,
@@ -38,20 +39,21 @@ class Items
           IDAPPEARANCE_NOT_VALID = 2,
           ITEMSTRUCTURE_NOT_VALID = 3,
           WEIGHT_NOT_VALID = 4,
-          SELLPRICEFORMULA_NOT_VALID = 5,
-          WEAPONTYPE_NOT_VALID = 6,
-          EQUIPPOSITION_NOT_VALID = 7,
-          DAMAGEROLL_NOT_VALID = 8,
-          DEALEXHAUST_NOT_VALID = 9,
-          UNLIMITEDAMMI_NOT_VALID = 10,
-          IDITEMKEY_NOT_VALID = 11,
-          DIFFICULTY_NOT_VALID = 12,
-          SLOTH_NOT_VALID = 13,
-          SLOTW_NOT_VALID = 14,
-          CONTAINERGOLD_NOT_VALID = 15,
-          CONTAINERURESPAWN_NOT_VALID = 16,
-          CONTAINERGRESPAWN_NOT_VALID = 17,
-          SIGNMESSAGE_NOT_VALID = 18;
+          SELLTYPE_NOT_VALID = 5,
+          SELLPRICEFORMULA_NOT_VALID = 6,
+          WEAPONTYPE_NOT_VALID = 7,
+          EQUIPPOSITION_NOT_VALID = 8,
+          DAMAGEROLL_NOT_VALID = 9,
+          DEALEXHAUST_NOT_VALID = 10,
+          UNLIMITEDAMMI_NOT_VALID = 11,
+          IDITEMKEY_NOT_VALID = 12,
+          DIFFICULTY_NOT_VALID = 13,
+          SLOTH_NOT_VALID = 14,
+          SLOTW_NOT_VALID = 15,
+          CONTAINERGOLD_NOT_VALID = 16,
+          CONTAINERURESPAWN_NOT_VALID = 17,
+          CONTAINERGRESPAWN_NOT_VALID = 18,
+          SIGNMESSAGE_NOT_VALID = 19;
 
     public function __construct($data)
     {
@@ -182,6 +184,25 @@ class Items
         }
 
         $this->weight = $weight;
+    }
+
+    private function setIdSellType($idSellType)
+    {
+        if(empty($idSellType))
+        {
+            $this->idSellType = 0;
+            return;
+        }
+
+        $idSellType = (int) $idSellType;
+
+        if($idSellType < 0 || $idSellType > 2147483647)
+        {
+            $this->errors[] = self::SELLTYPE_NOT_VALID;
+            return;
+        }
+
+        $this->idSellType = $idSellType;
     }
 
     private function setSellPriceFormula($sellPriceFormula)

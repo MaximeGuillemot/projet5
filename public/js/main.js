@@ -49,3 +49,76 @@ ajaxGet("http://localhost/projet5/pages/api/api.php", function (data)
 
     itemTable.colorRows();
 });
+
+
+document.getElementById("nav_items").addEventListener("mouseup", function()
+{
+    document.getElementById("items_page").style.display = "block";
+    this.className = "nav_items_colored";
+
+    document.getElementById("nav_creatures").className = "nav_creatures_blank";
+    document.getElementById("nav_npcs").className = "nav_npcs_blank";
+    document.getElementById("nav_clans").className = "nav_clans_blank";
+    document.getElementById("nav_spells").className = "nav_spells_blank";
+    document.getElementById("nav_flags").className = "nav_flags_blank";
+});
+
+document.getElementById("nav_creatures").addEventListener("mouseup", function()
+{
+    document.getElementById("items_page").style.display = "none";
+    this.className = "nav_creatures_colored";
+
+    document.getElementById("nav_items").className = "nav_items_blank";
+    document.getElementById("nav_npcs").className = "nav_npcs_blank";
+    document.getElementById("nav_clans").className = "nav_clans_blank";
+    document.getElementById("nav_spells").className = "nav_spells_blank";
+    document.getElementById("nav_flags").className = "nav_flags_blank";
+});
+
+document.getElementById("nav_npcs").addEventListener("mouseup", function()
+{
+    document.getElementById("items_page").style.display = "none";
+    this.className = "nav_npcs_colored";
+
+    document.getElementById("nav_items").className = "nav_items_blank";
+    document.getElementById("nav_creatures").className = "nav_creatures_blank";
+    document.getElementById("nav_clans").className = "nav_clans_blank";
+    document.getElementById("nav_spells").className = "nav_spells_blank";
+    document.getElementById("nav_flags").className = "nav_flags_blank";
+});
+
+document.getElementById("nav_clans").addEventListener("mouseup", function()
+{
+    document.getElementById("items_page").style.display = "none";
+    this.className = "nav_clans_colored";
+
+    document.getElementById("nav_items").className = "nav_items_blank";
+    document.getElementById("nav_creatures").className = "nav_creatures_blank";
+    document.getElementById("nav_npcs").className = "nav_npcs_blank";
+    document.getElementById("nav_spells").className = "nav_spells_blank";
+    document.getElementById("nav_flags").className = "nav_flags_blank";
+});
+
+document.getElementById("nav_spells").addEventListener("mouseup", function()
+{
+    document.getElementById("items_page").style.display = "none";
+    this.className = "nav_spells_colored";
+
+    document.getElementById("nav_items").className = "nav_items_blank";
+    document.getElementById("nav_creatures").className = "nav_creatures_blank";
+    document.getElementById("nav_npcs").className = "nav_npcs_blank";
+    document.getElementById("nav_clans").className = "nav_clans_blank";
+    document.getElementById("nav_flags").className = "nav_flags_blank";
+});
+
+document.getElementById("nav_flags").addEventListener("mouseup", function()
+{
+    document.getElementById("items_page").style.display = "none";
+    this.className = "nav_flags_colored";
+
+    document.getElementById("nav_items").className = "nav_items_blank";
+    document.getElementById("nav_creatures").className = "nav_creatures_blank";
+    document.getElementById("nav_npcs").className = "nav_npcs_blank";
+    document.getElementById("nav_clans").className = "nav_clans_blank";
+    document.getElementById("nav_spells").className = "nav_spells_blank";
+});

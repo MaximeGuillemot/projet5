@@ -8,7 +8,7 @@ table
     width: 95%;
 
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     
     border: 2px solid #071622;
     border-collapse: collapse;
@@ -97,7 +97,7 @@ tr:hover td
 {
     display: none;
 
-    width: 1200px;
+    width: 1170px;
     height: 680px;
 
     position: fixed;
@@ -150,7 +150,7 @@ tr:hover td
     font-weight: normal;
 }
 
-#item_desc fieldset
+.reqs_boosts
 {
     padding-top: 15px;
     width: 540px;
@@ -184,22 +184,21 @@ tr:hover td
     padding: 0;
 }
 
-li img
+#item_desc_wrapper li img
 {
     width: 25px;
     height: 25px;
     margin-right: 5px;
 }
 
-li
+#item_desc_wrapper li
 {
     display: flex;
     height: 28px;
     align-items: center;
-    padding-right: 15px;
 }
 
-li span
+#item_desc_wrapper li span
 {
     margin-left: 5px;
 }

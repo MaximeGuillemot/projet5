@@ -200,7 +200,7 @@ var Table =
     placeDescOnCursor: function(e)
     {
         var left  = (e.clientX + 30)  + "px";
-        var top  = (e.clientY - 250) + "px";
+        var top  = (e.clientY - 270) + "px";
 
         this.itemDescElt.style.left = left;
         this.itemDescElt.style.top = top;

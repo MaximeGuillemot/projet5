@@ -18,23 +18,23 @@
 		<div id="wrapper" class="flex">
 			<nav>
                 <ul>
-                    <li id="nav_items">
-                        <a href="index.php?p=items">Items</a>
+                    <li id="nav_items" class="nav_items_blank">
+                        <span>Items</span>
                     </li>
-                    <li id="nav_creatures">
-                        <a href="index.php?p=creatures">Creatures</a>
+                    <li id="nav_creatures" class="nav_creatures_blank">
+                        <span>Creatures</span>
                     </li>
-                    <li id="nav_npcs">
-                        <a href="index.php?p=npcs">NPCs</a>
+                    <li id="nav_npcs" class="nav_npcs_blank">
+                        <span>NPCs</span>
                     </li>
-                    <li id="nav_clans">
-                        <a href="index.php?p=clans">Clans</a>
+                    <li id="nav_clans" class="nav_clans_blank">
+                        <span>Clans</span>
                     </li>
-                    <li id="nav_spells">
-                        <a href="index.php?p=spells">Spells</a>
+                    <li id="nav_spells" class="nav_spells_blank">
+                        <span>Spells</span>
                     </li>
-                    <li id="nav_flags">
-                        <a href="index.php?p=flags">Flags</a>
+                    <li id="nav_flags" class="nav_flags_blank">
+                        <span>Flags</span>
                     </li>
                 </ul>
 			</nav>

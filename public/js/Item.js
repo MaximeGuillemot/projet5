@@ -61,8 +61,11 @@ var Item =
             {
                 itemCellElt.textContent = properties[property][1];
             }
-
-            itemLineElt.appendChild(itemCellElt);
+            
+            if(properties[property][0] === 'itemStructure' || properties[property][0] === 'name' || properties[property][0] === 'idItem' || properties[property][0] === 'weight' || properties[property][0] === 'sellPriceFormula')
+            {
+                itemLineElt.appendChild(itemCellElt);
+            }
         }
 
         table.appendChild(itemLineElt);

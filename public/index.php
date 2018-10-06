@@ -18,6 +18,7 @@ $itemsDB = new ItemsDB($db);
 
 $page = (!empty($_GET['p'])) ? $_GET['p'] : 'home';
 
+/*
 ob_start();
 switch ($page)
 {
@@ -34,3 +35,9 @@ $content = ob_get_clean();
 
 require '../pages/templates/default.php';
 
+*/
+
+ob_start();
+require '../pages/items.php';
+$content = ob_get_clean();
+require '../pages/templates/default.php';
