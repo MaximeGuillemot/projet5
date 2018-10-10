@@ -12,7 +12,7 @@
 
 	<body>
 		<header>
-			<h1><a href="index.php">T5C Editor</a></h1>
+			<h1>T5C Editor</h1>
 		</header>
 
 		<div id="wrapper" class="flex">

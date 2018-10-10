@@ -19,22 +19,64 @@
             <div class="item_img"><img id="item_pos" src="" alt="Item icon"></div>
             <div class="item_img"><img src="../public/images/item_appearances/generic_armor.png" alt="Item icon"></div>
             <div class="item_img"><img id="item_grid" src="" alt="Item grid"></div>
-            <fieldset>
-                <legend>Item Requirements</legend>
-                <div class="stats_wrapper" style="margin-right: 30px; margin-top: 20px; height: 120px;">
-                    <h4>General</h4>
-                    <ul>
-                        <li>Weight: <span id="" class="stat_value">---</span></li>
-                        <li>Sell Type: <span id="" class="stat_value">---</span></li>
-                        <li>Sell Price: <span id="" class="stat_value">---</span></li>
-                        <li>Cannot Junk: <span id="" class="stat_value">---</span></li>
-                        <li>Cannot Drop: <span id="" class="stat_value">---</span></li>
-                        <li>Cannot Rob: <span id="" class="stat_value">---</span></li>
-                        <li>Cannot Get: <span id="" class="stat_value">---</span></li>
-                        <li>Junk At Remort: <span id="" class="stat_value">---</span></li>
-                        <li>Item Is Unique: <span id="" class="stat_value">---</span></li>
-                        <li>Can Be Summoned: <span id="" class="stat_value">---</span></li>
-                    </ul>
+            <fieldset class="general_desc">
+                <legend>General Options</legend>
+                <div class="item_wrapper flex">
+                    <div class="gen_desc_wrapper">
+                        <h4>Cannots</h4>
+                        <ul>
+                            <li>
+                                <img src="../public/images/item_options/junk.png" alt="Junk Icon"> Cannot Junk: 
+                                <input type="checkbox" class="item_cannots" checked>
+                            </li>
+                            <li>
+                                <img src="../public/images/item_options/drop.png" alt="Drop Icon"> Cannot Drop: 
+                                <input type="checkbox" class="item_cannots" checked>
+                            </li>
+                            <li>
+                                <img src="../public/images/item_options/rob.png" alt="Rob Icon"> Cannot Rob: 
+                                <input type="checkbox" class="item_cannots">
+                            </li>
+                            <li>
+                                <img src="../public/images/item_options/get.png" alt="Get Icon"> Cannot Get: 
+                                <input type="checkbox" class="item_cannots">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gen_desc_wrapper">
+                        <h4>Weight & Sell Info</h4>
+                        <ul>
+                            <li>
+                                <img src="../public/images/item_options/weight.png" alt="Weight Icon"> Weight: 
+                                <input type="checkbox" class="item_sell_info">
+                            </li>
+                            <li>
+                                <img src="../public/images/item_options/sell.png" alt="Sell Icon"> Sell Type: 
+                                <input type="checkbox" class="item_sell_info" checked>
+                            </li>
+                            <li>
+                                <img src="../public/images/item_options/sell.png" alt="Sell Icon"> Sell Price: 
+                                <input type="checkbox" class="item_sell_info" checked>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gen_desc_wrapper">
+                        <h4>Others</h4>
+                        <ul>
+                            <li>
+                                <img src="../public/images/item_options/remort.png" alt="Remort Icon"> Junk At Remort: 
+                                <input type="checkbox" class="item_others">
+                            </li>
+                            <li>
+                                <img src="../public/images/item_options/unique.png" alt="Unique Icon"> Item Is Unique: 
+                                <input type="checkbox" class="item_others" checked>
+                            </li>
+                            <li>
+                                <img src="../public/images/item_options/summon.png" alt="Summon Icon"> Can Be Summoned: 
+                                <input type="checkbox" class="item_others">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </fieldset>
         </div>

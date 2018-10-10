@@ -30,6 +30,7 @@ ajaxGet("http://localhost/projet5/pages/api/api.php", function (data)
         listedItem.init(item);
         listedItem.addItemToTable(document.getElementById("items_list"));
 
+        //modif pour que ce soit pas juste les boosteditems et reqitems mais tous les items et actions selon contenu
         boostedItems.forEach(function (elt)
         {
             if(elt.idItem === listedItem.idItem)

@@ -140,6 +140,7 @@ var Table =
 
         var reqElt = document.getElementById(req);
 
+        reqElt.parentElement.style.opacity = "1";
         reqElt.textContent = elt.valueFormula;
 
         reqElt.style.fontWeight = "bold";
@@ -164,6 +165,7 @@ var Table =
         }
 
         var boonElt = document.getElementById(boon);
+        boonElt.parentElement.style.opacity = "1";
 
         boonElt.textContent = elt.valueFormula;
         boonElt.style.fontWeight = "bold";
@@ -216,6 +218,7 @@ var Table =
             characs[i].textContent = "---";
             characs[i].style.color = "#000";
             characs[i].style.fontWeight = "normal";
+            characs[i].parentElement.style.opacity = ".5";
         }
 
         this.itemDescElt.style.display = "none";
